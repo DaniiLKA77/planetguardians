@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support the planet. Donate to eco-projects worldwide.">
+  <title>PlanetGuardians.org</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #e0f7ef, #f4fff9);
+      color: #1e3932;
+    }
+    header {
+      background: url('./images/header.png') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p, header a {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    .cta-button {
+      background-color: #2a9d8f;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #21867a;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    section:nth-child(even) {
+      background-color: #f0fdf9;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    #donor-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    #donor-list div {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+    }
+    #donor-list div:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background-color: #264653;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PlanetGuardians.org</h1>
+    <p>Support ecological initiatives around the world with crypto donations</p>
+    <a href="#donate" class="cta-button">Donate Now</a>
+  </header>
+
+  <section id="donate">
+    <h2>Donate with Crypto</h2>
+    <p>Send your support to the following wallets:</p>
+    <ul>
+      <li><strong>Bitcoin:</strong> bc1qexamplewalletbtc</li>
+      <li><strong>Ethereum:</strong> 0xexamplewalleth</li>
+      <li><strong>USDT (TRC20):</strong> TXexampleusdt</li>
+    </ul>
+  </section>
+
+  <section id="top-donors">
+    <h2>Top 1000 Donors</h2>
+    <div id="donor-list"></div>
+  </section>
+
+  <footer>
+    <p>PlanetGuardians.org &copy; 2025. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const donors = [
+      { name: "Alex", amount: 420 },
+      { name: "Lina", amount: 380 },
+      { name: "Tom", amount: 330 },
+      { name: "Sara", amount: 290 },
+      { name: "John", amount: 250 }
+    ];
+    const donorList = document.getElementById("donor-list");
+    donors.forEach(donor => {
+      const div = document.createElement("div");
+      div.innerHTML = `<strong>${donor.name}</strong><br>$${donor.amount}`;
+      donorList.appendChild(div);
+    });
+  </script>
+</body>
+</html>
